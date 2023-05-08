@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
@@ -8,10 +8,13 @@ from app.models import Personas
 from .serializers import PersonaSerializers
 from .serializers import PersonaSerializers2
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 @csrf_exempt
 @api_view(['GET','POST'])
+@permission_classes((IsAuthenticated,))
 def lista_personas(request):
     if request.method == 'GET':
         persona = Personas.objects.all()
@@ -28,6 +31,7 @@ def lista_personas(request):
             return  Response(serializer.error,status= status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def vista_persona_mod(request, id):
     try:
         p = Personas.objects.get(id_per=id)

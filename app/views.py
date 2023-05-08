@@ -11,6 +11,14 @@ def pagPrincipal(request):
 
     return render (request,'app/pagPrincipal.html')
 
+def empMinero(request):
+
+    return render (request,'app/empMinero.html')
+
+def empAgropecuario(request):
+
+    return render (request,'app/empAgropecuario.html')
+
 def empRetail(request):
 
     return render (request,'app/empRetail.html')
@@ -56,7 +64,16 @@ def pagIniciosesion(request):
         return redirect('iniciar')
     
     return render(request, 'app/pagIniciosesion.html')
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('pagPrincipal')
+        
+
+
             
+
+
 #INGRESO RECLAMO
 
 def pagReclamos(request):
@@ -105,7 +122,7 @@ def pagModificar(request, id):
 
     return render(request, 'app/pagModificar.html', datos)
 
-#PENDIENTE
+#LISTAR USUARIO
 
 def listar_E_persona(request):
     Personas = Personas.objects.all()
@@ -114,7 +131,7 @@ def listar_E_persona(request):
     }
     return render(request, 'app/listar_E_persona.html',datos)
 
-#PENDIENTE
+#BORRAR USUARIO
 
 def form_D_persona(request, id):
     aut = Personas.objects.get(id=id)

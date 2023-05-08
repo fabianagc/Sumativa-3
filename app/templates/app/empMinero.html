@@ -1,44 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <html lang="es">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="trabajo" content="Pagina creada para la busqueda de trabajo"/>
-        <meta name="palabras clave" content="trabajo, empleo, laburo"/>
-        <meta name="autor" content="Grupo 4" />
-        <meta name="copyright" content="FuturoTrabajo" />
-        <link rel="stylesheet" href="css/estilos.css">
-        <title> Futuro trabajo </title>
-    </head>
-    <header>
-        <div class="menu-p">
-            <div><a class="logo" href="pagPrincipal.html">Trabajo Futuro</a></div>
-                <nav class="menu">
-                    <a href="pagIniciosesion.html">Inicia sesion</a>
-                    <a href="pagRegistro.html">Registrate</a>
-                    <a href="pagEmpleo.html">Empleo</a>
-                    <a href="#">Cuenta Empresa</a>
-                    <a href="#">Cuenta Persona</a>
-                    <a href="#">Nosotros</a>
-                </nav>
-         </div>
-    </header>
-<body>
-    <div class="minero">
-      <div
-      style="color: whitesmoke;
-      font-size: 25px;">
-      <h2>Ninguna oferta laboral,vuelve a visitarnos pronto!</h2>
-      <div
-      style="color: yellow;
-      font-size: 50px;">
-      <a href="pagEmpleo.html">Volver</a>
-      
+{% extends 'app/base.html' %}
 
-      </div>
-    </div>
-</body>
-</html>
+{% block contenido %}
+    <body>
+        <div class="retail">
+        <div
+        style="color: black;
+        font-size: 35px;">
+        <a href="#">CONTROL DOCUMENTOS A - MINERÍA</a>
+          <p>J.E.J. Ingeniería busca el cargo "CONTROL DOCUMENTOS A" para importante proyecto en Servicios de Apoyo a la Gestión de Proyectos de Minera Centinela – Sierra Gorda.
+
+            Turno 4X3 Diurno.
+            
+            Función:
+            
+            Gestionar la emisión, distribución y control de los documentos técnicos de ingeniería, vendors y documentación en general que se genere en MCENT.
+            
+            Requisitos:
+            
+            Requisitos:
+            • Formación de Técnico/a Profesional - Ingeniería o carrera afín.
+            • Al menos 10 años de experiencia general (Efectivos desde titulación).
+            • Al menos 9 años de experiencia en la gestión documental en todo el proceso de gestión de los proyectos
+            • Experiencia en generar la documentación requerida, según los requerimientos y estándares de MCENT </p>
+        </div>
+        <div
+        style="color: black;
+        font-size: 35px;">
+        <a href="#">LÍDER GESTION DE RIESGOS - MINERÍA</a>
+          <p>En JEJ Ingeniería SA estamos en búsqueda de vacante disponible para el cargo LÍDER GESTIÓN DE RIESGOS en prestación de servicios a División El Teniente, Rancagua. </p>
+        </div>
+        <div
+        style="color: black;
+        font-size: 35px;">
+        <a href="#">Personal de minería con licencia B y D / Rajo Inca - El Salvador 7x7</a>
+          <p>Importante empresa del rubro minero dedicada a la elaboración de explosivos está en búsqueda de encargardos de patio con licencia B y D para la minera Rajo Inca-El Salvador quienes apoyaran el proceso de tronadura colaborando con todos los involucrados a fin de que esta sea realizada de la manera más eficiente y segura posible.</p>
+        </div>
+        <div
+        style="color: black;
+        font-size: 50px;">
+        </div>
+        <div><a class="Trabajos"  href="{% url 'pagEmpleo'%}">Volver</a></div>
+        </div>
+    </body>
+        {% endblock %}
